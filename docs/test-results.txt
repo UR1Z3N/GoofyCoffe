@@ -1,0 +1,18 @@
+PHPUnit 11.5.55 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.31
+Configuration: GoofyCoffe\phpunit.xml
+
+...                                                                 3 / 3 (100%)
+
+Time: 00:00.108, Memory: 8.00 MB
+
+OK (3 tests, 15 assertions)
+
+Test double: Mock (PDO / PDOStatement)
+Class under test: Order::createOrder
+
+Tests:
+- testCreateOrderSuccessCommitsTransaction
+- testCreateOrderRollsBackOnExecuteFailure
+- testCreateOrderExecutesForEachCartItem

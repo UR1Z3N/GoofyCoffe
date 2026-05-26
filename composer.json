@@ -1,0 +1,22 @@
+{
+    "name": "goofycoffe/pos",
+    "description": "Goofycafe POS application",
+    "type": "project",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "classmap": [
+            "models/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
