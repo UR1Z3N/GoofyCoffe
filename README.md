@@ -36,15 +36,6 @@ Buka terminal/command prompt pada direktori root project, lalu jalankan perintah
 php test_report.php
 ```
 
-### 2. Melalui Web Browser
-Buka aplikasi web server lokal Anda (seperti XAMPP/WampServer), pastikan Apache berjalan, lalu akses URL project melalui browser:
-```text
-http://localhost/GoofyCoffe/test_report.php
-```
-*Script secara otomatis mendeteksi akses non-CLI dan menyajikan tampilan output plain-text yang rapi di browser.*
-
----
-
 ## 📊 Hasil Pengujian (Test Results)
 Berikut adalah log output dari eksekusi unit test pada file `test_report.php`:
 
