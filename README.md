@@ -78,6 +78,9 @@ Jumlah Gagal               : 0
 ========================================================
 ```
 
+### 📸 Screenshot Hasil Pengujian
+![Hasil Unit Testing](hasil-unit-testing.png)
+
 ---
 
 ## 🛠️ Penjelasan Implementasi Kode
