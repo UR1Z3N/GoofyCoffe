@@ -1,9 +1,11 @@
 <?php
-class Menu {
+require_once __DIR__ . '/interfaces/MenuRepositoryInterface.php';
+
+class Menu implements MenuRepositoryInterface {
     private $conn;
     private $table_name = "menus";
 
-    public function __construct($db) {
+    public function __construct(PDO $db) {
         $this->conn = $db;
     }
 

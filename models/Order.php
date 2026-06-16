@@ -1,9 +1,11 @@
 <?php
-class Order {
+require_once __DIR__ . '/interfaces/OrderRepositoryInterface.php';
+
+class Order implements OrderRepositoryInterface {
     private $conn;
     private $table_name = "orders";
 
-    public function __construct($db) {
+    public function __construct(PDO $db) {
         $this->conn = $db;
     }
 

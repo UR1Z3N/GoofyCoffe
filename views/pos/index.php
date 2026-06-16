@@ -25,40 +25,44 @@ foreach ($categories as $cat) {
 ?>
 
 <!-- Sidebar Categories -->
-<aside id="tour-category" class="w-64 bg-[#f9f9f9] border-r border-gray-200 overflow-y-auto flex-shrink-0 flex flex-col z-10 relative">
-    <div class="py-4">
+<aside id="tour-category" class="w-full lg:w-64 bg-[#f9f9f9] border-b lg:border-b-0 lg:border-r border-gray-200 overflow-x-auto lg:overflow-y-auto flex-shrink-0 flex flex-row lg:flex-col z-10 relative">
+    <div class="py-2 lg:py-4 flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible items-center lg:items-stretch w-full">
         <!-- MAKANAN -->
         <?php if(!empty($makanan)): ?>
-        <h2 class="text-[13px] font-black text-gray-800 px-4 mb-1 mt-2 uppercase flex items-center tracking-wider">
-            <i class="fas fa-hamburger text-green-600 mr-2 text-sm"></i> MAKANAN
-        </h2>
-        <ul class="mb-4">
-            <?php foreach($makanan as $cat): ?>
-            <li class="category-item cursor-pointer text-[13px] text-gray-700 hover:bg-gray-200 transition py-2 px-4 pl-10 relative" data-category="<?= $cat['name'] ?>" onclick="filterCategory('<?= $cat['name'] ?>', this)">
-                <div class="active-indicator absolute left-0 top-0 bottom-0 w-2 bg-green-600 hidden"></div>
-                <span class="category-text"><?= $cat['name'] ?></span>
-            </li>
-            <?php endforeach; ?>
-        </ul>
+        <div class="flex lg:block items-center mx-2 lg:mx-0 shrink-0">
+            <h2 class="text-[13px] font-black text-gray-800 px-2 lg:px-4 mb-0 lg:mb-1 mt-0 lg:mt-2 uppercase flex items-center tracking-wider mr-2 lg:mr-0">
+                <i class="fas fa-hamburger text-green-600 mr-2 text-sm"></i> MAKANAN
+            </h2>
+            <ul class="flex flex-row lg:flex-col lg:mb-4 space-x-2 lg:space-x-0">
+                <?php foreach($makanan as $cat): ?>
+                <li class="category-item shrink-0 cursor-pointer text-[13px] text-gray-700 hover:bg-gray-200 transition py-1.5 lg:py-2 px-3 lg:px-4 lg:pl-10 relative rounded-full lg:rounded-none border border-gray-200 lg:border-none" data-category="<?= $cat['name'] ?>" onclick="filterCategory('<?= $cat['name'] ?>', this)">
+                    <div class="active-indicator absolute left-0 top-0 bottom-0 w-2 bg-green-600 hidden lg:block"></div>
+                    <span class="category-text whitespace-nowrap"><?= $cat['name'] ?></span>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
         <?php endif; ?>
 
         <!-- MINUMAN -->
         <?php if(!empty($minuman)): ?>
-        <h2 class="text-[13px] font-black text-gray-800 px-4 mb-1 mt-4 uppercase flex items-center tracking-wider">
-            <i class="fas fa-coffee text-green-600 mr-2 text-sm"></i> MINUMAN
-        </h2>
-        <ul class="mb-4">
-            <?php foreach($minuman as $cat): ?>
-            <li class="category-item cursor-pointer text-[13px] text-gray-700 hover:bg-gray-200 transition py-2 px-4 pl-10 relative" data-category="<?= $cat['name'] ?>" onclick="filterCategory('<?= $cat['name'] ?>', this)">
-                <div class="active-indicator absolute left-0 top-0 bottom-0 w-2 bg-green-600 hidden"></div>
-                <span class="category-text"><?= $cat['name'] ?></span>
-            </li>
-            <?php endforeach; ?>
-        </ul>
+        <div class="flex lg:block items-center mx-2 lg:mx-0 shrink-0">
+            <h2 class="text-[13px] font-black text-gray-800 px-2 lg:px-4 mb-0 lg:mb-1 mt-0 lg:mt-4 uppercase flex items-center tracking-wider mr-2 lg:mr-0 ml-4 lg:ml-0 border-l border-gray-300 lg:border-none pl-4 lg:pl-4">
+                <i class="fas fa-coffee text-green-600 mr-2 text-sm"></i> MINUMAN
+            </h2>
+            <ul class="flex flex-row lg:flex-col lg:mb-4 space-x-2 lg:space-x-0">
+                <?php foreach($minuman as $cat): ?>
+                <li class="category-item shrink-0 cursor-pointer text-[13px] text-gray-700 hover:bg-gray-200 transition py-1.5 lg:py-2 px-3 lg:px-4 lg:pl-10 relative rounded-full lg:rounded-none border border-gray-200 lg:border-none" data-category="<?= $cat['name'] ?>" onclick="filterCategory('<?= $cat['name'] ?>', this)">
+                    <div class="active-indicator absolute left-0 top-0 bottom-0 w-2 bg-green-600 hidden lg:block"></div>
+                    <span class="category-text whitespace-nowrap"><?= $cat['name'] ?></span>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
         <?php endif; ?>
     </div>
     
-    <div class="mt-auto p-4 border-t border-gray-200 bg-white">
+    <div class="mt-auto p-4 border-t lg:border-l border-gray-200 bg-white min-w-[150px] lg:min-w-0 flex items-center justify-center">
         <button onclick="filterCategory('all', null)" class="w-full text-center py-2.5 rounded text-sm text-green-700 font-bold bg-green-50 hover:bg-green-100 transition border border-green-200">
             Tampilkan Semua
         </button>
@@ -66,14 +70,14 @@ foreach ($categories as $cat) {
 </aside>
 
 <!-- Main Menu Area -->
-<main id="tour-menu" class="flex-1 p-6 overflow-y-auto bg-gray-50 relative">
-    <div id="menu-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-24">
+<main id="tour-menu" class="flex-1 p-4 lg:p-6 overflow-y-auto bg-gray-50 relative min-h-[50vh] lg:min-h-0">
+    <div id="menu-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 pb-24">
         <!-- Rendered by JS -->
     </div>
 </main>
 
 <!-- Cart Sidebar -->
-<aside id="tour-cart" class="w-96 bg-white flex flex-col border-l border-gray-200 shadow-[-4px_0_15px_rgba(0,0,0,0.02)]">
+<aside id="tour-cart" class="w-full lg:w-96 bg-white flex flex-col lg:border-l border-t lg:border-t-0 border-gray-200 shadow-[-4px_0_15px_rgba(0,0,0,0.02)] h-auto lg:h-full">
     <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-white">
         <h3 class="font-bold text-gray-800 text-lg">Keranjang Pesanan</h3>
         <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-full" id="cart-count">0 item</span>

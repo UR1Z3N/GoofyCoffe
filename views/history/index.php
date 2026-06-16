@@ -19,13 +19,13 @@ function formatRupiah($number) {
 
 <main class="flex-1 p-8 overflow-y-auto bg-gray-50">
     <div class="max-w-6xl mx-auto">
-        <div class="flex justify-between items-end mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 space-y-4 md:space-y-0">
             <div>
                 <h1 class="text-2xl font-bold text-gray-800">Riwayat Transaksi</h1>
                 <p class="text-gray-500 text-sm mt-1">Daftar transaksi yang telah selesai</p>
             </div>
             
-            <form action="" method="GET" class="flex space-x-3 items-end bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+            <form action="" method="GET" class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 items-start md:items-end bg-white p-4 rounded-xl shadow-sm border border-gray-100 w-full md:w-auto">
                 <input type="hidden" name="page" value="history">
                 
                 <div>
@@ -45,7 +45,7 @@ function formatRupiah($number) {
             </form>
         </div>
 
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto">
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-gray-50 text-gray-600 border-b border-gray-200 text-sm">
@@ -91,7 +91,7 @@ function formatRupiah($number) {
 
 <!-- Order Details Modal -->
 <div id="detail-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center backdrop-blur-sm">
-    <div class="bg-white rounded-2xl w-[500px] shadow-2xl overflow-hidden transform transition-all flex flex-col max-h-[90vh]">
+    <div class="bg-white rounded-2xl w-full max-w-[500px] mx-4 shadow-2xl overflow-hidden transform transition-all flex flex-col max-h-[90vh]">
         <div class="bg-gray-800 p-4 text-white flex justify-between items-center shrink-0">
             <div>
                 <h3 class="font-bold text-lg">Detail Transaksi</h3>

@@ -1,12 +1,14 @@
 <?php
-class Database {
+require_once __DIR__ . '/DatabaseInterface.php';
+
+class Database implements DatabaseInterface {
     private $host = "localhost";
     private $db_name = "goofycafe_db";
     private $username = "root";
     private $password = "";
-    public $conn;
+    private $conn;
 
-    public function getConnection() {
+    public function getConnection(): PDO {
         $this->conn = null;
 
         try {

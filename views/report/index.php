@@ -31,21 +31,26 @@ function formatRupiah($number) {
 
 <main class="flex-1 p-8 overflow-y-auto bg-gray-50">
     <div class="max-w-6xl mx-auto">
-        <div class="flex justify-between items-end mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 space-y-4 md:space-y-0">
             <div>
                 <h1 class="text-2xl font-bold text-gray-800">Laporan Keuangan</h1>
                 <p class="text-gray-500 text-sm mt-1">Rekapitulasi pendapatan harian</p>
             </div>
             
-            <form action="" method="GET" class="flex space-x-3 items-end bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+            <form action="" method="GET" class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 items-start md:items-end bg-white p-4 rounded-xl shadow-sm border border-gray-100 w-full md:w-auto">
                 <input type="hidden" name="page" value="report">
                 <div>
                     <label class="block text-xs font-semibold text-gray-600 mb-1">Pilih Tanggal</label>
                     <input type="date" name="date" value="<?= htmlspecialchars($selected_date) ?>" class="border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-green-500">
                 </div>
-                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm h-[38px]">
-                    <i class="fas fa-search mr-1"></i> Tampilkan
-                </button>
+                <div class="flex space-x-2 w-full md:w-auto">
+                    <button type="submit" class="flex-1 md:flex-none bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm h-[38px] flex items-center justify-center">
+                        <i class="fas fa-search mr-1"></i> Tampilkan
+                    </button>
+                    <a href="controllers/download_report.php?date=<?= htmlspecialchars($selected_date) ?>" target="_blank" class="flex-1 md:flex-none bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm h-[38px] flex items-center justify-center">
+                        <i class="fas fa-file-pdf mr-1"></i> Unduh PDF
+                    </a>
+                </div>
             </form>
         </div>
 
